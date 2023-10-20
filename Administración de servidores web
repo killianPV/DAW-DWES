@@ -1,0 +1,149 @@
+P2: Administración de servidores web
+La actividad es individual, pero os podéis ayudar sin copiar.
+Comente todo el código para su correcta comprensión. Si quiere destacar algo, puede responder la actividad con los puntos que considere clave o destacables.
+Instrucciones de entrega:
+Esta entrega se realizará mediante la plataforma Moodle y GitHub.
+En el Moodle, habrá que subir un archivo .md con el siguiente nombre: DAW_ DAW_Apellido1_Apellido2_Nombre.md siguiendo el formato Markdown para explicar los diferentes ejercicios.
+En GitHub se tendrá que subir en el repositorio de la asignatura. Se puede añadir imágenes y añadirlas en el documento.
+ 
+
+1.	Instale en una máquina virtual un sistema operativo con base Linux (se recomienda Debian o Ubuntu) e instale apache2.
+
+
+
+
+2.	Explique con sus palabras que es una petición GET, POST, PUT y DELETE, remarcando sus diferencias.
+Petición GET: Solicita al servidor una información o recurso concreto.
+
+Petición POST: Se utiliza para enviar una entidad a un recurso en específico.
+
+Petición PUT: Actualiza datos del servidor y su no existen dichos datos, los crea.
+
+Petición DELETE: Se usa para eliminar información del servidor.
+
+3.	Cambie del puerto 80 al puerto 4444 el servidor apache2. Muestra desde el navegador su funcionamiento adjuntando una captura de pantalla.
+ 
+ 
+ 
+
+
+4.	Instale un certificado SSL y configure su Apache para servir contenido a través de HTTPS en el puerto 4444. Muestre desde el navegador cómo se muestra el sitio web como "seguro" (aunque sea un certificado autofirmado).
+ 
+
+
+ 
+ 
+ 
+
+5.	¿Dónde se encuentran los ficheros de configuración de Apache2?
+•	Ubicación principal.
+ 
+ 
+•	Explora el archivo apache2.conf. Identifica las secciones principales y describe su propósito.
+1.	Global Configuration: Constituye la parte principal y engloba las configuraciones para el servidor web. 
+2.	ServerRoot: Define la ubicación del directorio. 
+3.	Timeout: Representa el periodo máximo durante el cual el servidor aguarda antes de rechazar la solicitud.
+
+
+•	sites-available y sites-enabled: Explica la diferencia entre estos dos directorios y cómo funcionan juntos.
+
+La principal diferencia es que sites-available tiene configuraciones para todos los sitios, mientras que sites-enabled tiene enlaces a los sitios web que están activos y listos para ser utilizados por el servidor.
+
+•	mods-available y mods-enabled: Explica la diferencia entre estos dos directorios.
+
+La principal diferencia es que mods-available tiene configuraciones para todos los módulos, mientras que mods-enabled tiene enlaces a los módulos que están activos y listos para ser utilizados por el servidor.
+
+6.	¿Dónde se encuentran los ficheros de ejecución de Apache2?
+•	Ubicación principal
+ 
+•	Control del servicio: Utiliza el binario de ejecución para iniciar, detener, recargar y reiniciar el servidor Apache2 explicando la diferencia entre cada uno de los comandos utilizados.
+ 
+
+
+
+
+
+
+•	Comprobación de sintaxis: Usa el binario de Apache para verificar la sintaxis de tu configuración. Esto es útil para asegurarse de que no haya errores antes de reiniciar el servidor.
+ 
+.
+7.	¿Dónde se encuentran los ficheros de monitorización de Apache2?
+•	Ubicación principal
+La ubicación principal es /var/log/apache2
+•	error.log y access.log: Explica la diferencia entre estos dos archivos. Abre y revisa las entradas recientes en cada uno de ellos.
+
+error.log: Registra mensajes de error y eventos críticos relacionados con el servidor Apache, útil para diagnosticar problemas. 
+access.log: Registra detalles de las solicitudes de acceso al servidor, como direcciones IP, recursos solicitados y códigos de estado HTTP, brindando información sobre la actividad del servidor desde el punto de vista del acceso.
+
+  
+
+•	Rotación de logs: Investiga cómo funciona la rotación de logs en Apache2.
+¿Por qué es importante? ¿Cómo se configura?
+
+La rotación de logs evita el crecimiento indefinido de archivos de logs y facilita la gestión. Apache2 utiliza logrotate, realiza tareas como comprimir, renombrar y eliminar logs antiguos según la configuración.
+ 
+
+
+•	Monitorización en tiempo real: Utiliza herramientas como tail -f para monitorear en tiempo real los accesos a tu servidor web y posibles errores.
+ 
+
+
+
+•	Análisis de logs: Instala y usa herramientas como goaccess para analizar y obtener estadísticas visuales a partir de tus logs de Apache2.
+   
+ 
+ 
+8.	¿Qué es un Firewall? ¿Para qué sirve? ¿Por qué es necesario? Instale y configure un Firewall en la máquina virtual para que solo permita tráfico HTTP y HTTPS. Bloquee todo el resto de los puertos y demuestre su funcionamiento.
+Un firewall es una barrera que se utiliza para controlar el tráfico de red entre una red privada y otra red, como internet.
+Su función principal es actuar como un filtro que decide qué datos pueden entrar o salir de la red, basándose en un conjunto de reglas.
+
+ 
+ 
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9.	Explica con tus palabras las diferentes partes de una URL.
+
+https://www.ejemplo.es/pagina/inicio?seccion=contacto
+
+Protocolo: https://
+Especifica cómo se deben comunicar tu computadora y el servidor.
+
+Nombre del dominio: www.ejemplo.es
+Es la dirección principal de la página web.
+
+Ruta: /pagina/inicio
+Es la ubicación específica en el sitio.
+
+Parámetros: ?seccion=contacto
+Es información adicional.
+
+10.	Explica el funcionamiento del protocolo HTTP con tus palabras.
+
+HTTP es un protocolo que permite la comunicación entre su navegador y un servidor web. 
+Cuando escribe una dirección (URL) y presiona "Entrar", su navegador envía una solicitud al servidor para obtener la página web. 
+El servidor procesa la solicitud y devuelve la página que muestra su navegador. Es como una breve conversación para obtener información de Internet.
+
+11.	¿Qué es un archivo .htaccess? Proporcione un ejemplo de cómo se puede utilizar para reescribir URL o restringir el acceso a ciertas partes de su sitio web.
+
+Un archivo .htaccess es un archivo de configuración que se usa en apache. 
+Proporciona directivas para configurar el servidor en un directorio determinado 
+
+ 
